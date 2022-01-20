@@ -14,14 +14,14 @@ class Controller extends BaseController
     public function getNews(?int $id = null): array
     {
         $faker = Factory::create();
-        $data =[];
+        $data = [];
 
         if($id)
         {
             return [
                 'id' => $id,
                 'title' => $faker->jobTitle(),
-                'description' => $faker->text(100),
+                'description' => "<strong>" . $faker->text(100) . "</strong>",
                 'author' => $faker->userName(),
                 'created_at' => now('Asia/Yekaterinburg'),
             ];
